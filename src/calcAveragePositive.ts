@@ -64,4 +64,4 @@ return outputArray;
 }
 console.log(calcAverageNegativeAndPositive([10, -100, 20, -200, -3])); //[15, -101]
 
-export default calcAverageNegativeAndPositive
+export default calcAverageNegativeAndPositive;
