@@ -36,39 +36,30 @@ outputArray = [average positive,average negative]
 
 */
 /**
- * 
+ *
  * @param inputArray array of negative and positive numbers
- * @returns an array with average for positive number and average for negative number 
+ * @returns an array with average for positive number and average for negative number
  */
-function calcAveragesNegativeAndPositive(inputArray:number[]){
-    let posArray = [];
-    let negArray = [];
+function calcAveragesNegativeAndPositive(inputArray: number[]) {
+  let totalPosNum = 0;
+  let totalNegNum = 0;
+  let countPositive = 0;
+  let countNegative = 0;
 
-for (const num of inputArray ){
-    if (num > 0){
-        posArray.push(num);
-    } else{
-        negArray.push(num);
+  for (const num of inputArray) {
+    if (num > 0) {
+      countPositive++;
+      totalPosNum += num;
+    } else {
+      countNegative++;
+      totalNegNum += num;
     }
-    let totalPosNum = 0;
-    let totalNegNum = 0;
-
-
-for(const posNumber of posArray){
-   totalPosNum += posNumber;
 }
+const averagePos = totalPosNum / countPositive;
+const averageNeg = totalNegNum / countNegative;
 
-for(const negNumber of negArray){
-    totalNegNum += negNumber;
- }
-
-const averagePos = totalPosNum/posArray.length;
-const averageNeg = totalNegNum/negArray.length;
-
-const outputArray = [averagePos,averageNeg];
+const outputArray = [averagePos, averageNeg];
 
 return outputArray;
-    
 }
-}
-console.log(calcAveragesNegativeAndPositive([10, -100, 20, -200, -3]));
+console.log(calcAveragesNegativeAndPositive([10, -100, 20, -200, -3])); //[15, -101]
